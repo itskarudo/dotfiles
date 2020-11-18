@@ -75,3 +75,15 @@ nmap <F2> <Plug>(coc-rename)
 
 " Remap emmet leader key
 let g:user_emmet_leader_key='<C-x>'
+
+" Open docs with K
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
