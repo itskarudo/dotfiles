@@ -27,6 +27,7 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'morhetz/gruvbox' " Gruvbox theme
 Plug 'vim-airline/vim-airline' " Main airline
 Plug 'vim-airline/vim-airline-themes' " themes lol
+Plug 'edkolev/tmuxline.vim' " Tmux airline
 Plug 'christoomey/vim-tmux-navigator' " TMux integration
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -43,13 +44,14 @@ colorscheme gruvbox
 " COC config
 let g:coc_global_extensions = [
   \ 'coc-json',
+  \ 'coc-clangd',
   \ 'coc-snippets',
   \ 'coc-prettier',
   \ 'coc-eslint',
   \ 'coc-git',
   \ 'coc-python',
   \ 'coc-tsserver',
-  \ 'coc-clangd'
+  \ 'coc-tailwindcss'
   \]
 
 " Use <c-space> to trigger completion.
@@ -60,6 +62,14 @@ inoremap <silent><expr> <c-space> coc#refresh()
 nmap <C-b> :NERDTreeToggle<CR>
 let g:NERDTreeGitStatusUseNerdFonts = 1
 let g:webdevicons_enable_nerdtree = 1
+
+" open nerdtree if no file is specified
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" close nerdtree if no file is present
+
+" nerd commentor thingy
 vmap ++ <plug>NERDCommenterToggle
 nmap ++ <plug>NERDCommenterToggle
 
@@ -87,3 +97,8 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
+
+
+" Vim panes config
+set splitbelow
+set splitright
