@@ -1,6 +1,8 @@
 syntax on
 set number relativenumber                                                                                       
+filetype plugin on
 set nu rnu
+set cursorline
 
 set tabstop=2
 set shiftwidth=2
@@ -24,27 +26,30 @@ Plug 'preservim/nerdtree' " Nerd Tree POG
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'morhetz/gruvbox' " Gruvbox theme
-Plug 'vim-airline/vim-airline' " Main airline
-Plug 'vim-airline/vim-airline-themes' " themes lol
-Plug 'edkolev/tmuxline.vim' " Tmux airline
+Plug 'arcticicestudio/nord-vim'
+Plug 'itchyny/lightline.vim'
 Plug 'christoomey/vim-tmux-navigator' " TMux integration
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdcommenter'
 Plug 'mattn/emmet-vim'
+Plug 'jaxbot/browserlink.vim'
+Plug 'rhysd/vim-clang-format'
 call plug#end()
 
-" theme config
-set background=dark
-let g:airline_theme='gruvbox'
+let g:NERDCustomDelimiters = { 'typescript.tsx': { 'left': '//', 'leftAlt': '/*', 'rightAlt': '*/' } }
 
-colorscheme gruvbox
+
+" theme config
+
+let g:lightline = {
+      \ 'colorscheme': 'nord',
+      \ }
+colorscheme nord
 
 " COC config
 let g:coc_global_extensions = [
   \ 'coc-json',
-  \ 'coc-clangd',
   \ 'coc-snippets',
   \ 'coc-prettier',
   \ 'coc-eslint',
@@ -67,7 +72,6 @@ let g:webdevicons_enable_nerdtree = 1
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
-" close nerdtree if no file is present
 
 " nerd commentor thingy
 vmap ++ <plug>NERDCommenterToggle
