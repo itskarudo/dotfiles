@@ -1,0 +1,51 @@
+#!/bin/sh
+
+
+bspc monitor -d 1 2 3 4 5 6 7 8 9
+
+_bc() {
+  bspc config "$@"
+}
+
+_bc window_gap                  8
+_bc bottom_padding              26 
+_bc top_monocle_padding         0
+_bc border_width                2
+_bc top_padding                 0
+_bc left_padding                0
+_bc right_padding               0
+_bc click_to_focus              true
+_bc split_ratio                 0.53
+_bc borderless_monocle          true
+_bc gapless_monocle             true
+_bc single_monocle              true
+_bc pointer_modifier            mod4
+_bc pointer_action1             move
+
+
+
+# Colors and stuff
+bspc config active_border_color "#767c82"
+bspc config focused_border_color "#767c82"
+bspc config normal_border_color "#373d41"
+bspc config presel_border_color "#7373d41"
+
+# Rules for the love of god!
+bspc rule -a feh state='floating'
+bspc rule -a Galculator state='floating'
+bspc rule -a Polybar sticky=on locked=on focus=off
+
+# Daemons and shit
+pgrep -x sxhkd > /dev/null || sxhkd &
+picom &
+dunst &
+
+# Replace caps lock with control
+setxkbmap -option caps:ctrl_modifier
+
+# Autostart
+~/.config/polybar/launch.sh &
+~/.config/bspwm/autostart &
+setxkbmap -option grp:alt_shift_toggle us,ar &
+xsetroot -cursor_name left_ptr &
+bash /home/karudo/.config/bspwm/bspwm_colors.sh &
