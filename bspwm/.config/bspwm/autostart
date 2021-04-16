@@ -1,7 +1,5 @@
 #!/bin/sh
-# Applications
-#feh --bg-scale --randomize $HOME/Pictures/Wallpapers
-dwall -s street &
+wal -o ~/.config/wal/done.sh -i $HOME/Pictures/Wallpapers &
 pgrep conky || ~/.config/conky/start-conky.sh &
 xrdb ~/.Xresources
 

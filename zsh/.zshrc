@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/.local/bin/:$HOME/.yarn/bin/:$PATH
+export PATH=$HOME/.local/bin/:$HOME/.yarn/bin/:$HOME/go/bin/:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/karudo/.oh-my-zsh"
@@ -94,8 +94,10 @@ alias ls='ls --color=auto --ignore=lost+found'
 alias v="nvim"
 alias pac="sudo pacman"
 alias pms="pacman -Ss"
-alias dla="youtube-dl -x --audio-format mp3 --audio-quality 0 --add-metadata"
+alias ydl="youtube-dl"
+alias ydla="youtube-dl -x --audio-format mp3 --audio-quality 0 --add-metadata"
 alias gic="git clone"
+alias rn="trash"
 
 eval "$(starship init zsh)"
 

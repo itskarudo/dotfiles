@@ -81,7 +81,7 @@ case $chosen in
 		if [[ $ans == "yes" || $ans == "YES" || $ans == "y" || $ans == "Y" ]]; then
 			if [[ "$DESKTOP_SESSION" == "Openbox" ]]; then
 				openbox --exit
-			elif [[ "$DESKTOP_SESSION" == "/usr/share/xsessions/bspwm" ]]; then
+			elif [[ "$DESKTOP_SESSION" == "bspwm" ]]; then
 				bspc quit
 			elif [[ "$DESKTOP_SESSION" == "i3" ]]; then
 				i3-msg exit

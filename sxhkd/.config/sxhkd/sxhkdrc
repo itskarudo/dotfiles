@@ -35,11 +35,11 @@ super + e
 
 #Volume Control
 XF86AudioLowerVolume
-	~/.local/scripts/volume.sh down
+	amixer -D pulse sset Master 5%-
 XF86AudioRaiseVolume
-	~/.local/scripts/volume.sh up
+	amixer -D pulse sset Master 5%+
 XF86AudioMute
-	~/.local/scripts/volume.sh mute
+	amixer -D pulse set Master 1+ toggle
 XF86AudioPlay
 	playerctl play-pause
 XF86AudioNext
@@ -48,9 +48,9 @@ XF86AudioPrev
 	playerctl previous
 #Brightness control
 XF86MonBrightnessDown
-	~/.local/scripts/brightness.sh down
+	xbacklight -dec 5
 XF86MonBrightnessUp
-	~/.local/scripts/brightness.sh up
+	xbacklight -inc 5
 #
 # bspwm hotkeys
 #
