@@ -6,8 +6,8 @@
 #cell_width_scale = 1.0
 #clickable_url = true
 #dynamic_title = true
-font = CaskaydiaCove Nerd Font 10
-#font = FiraCode Nerd Font Medium 10
+font = CaskaydiaCove Nerd Font Mono 10
+#font = Iosevka Nerd Font Mono Medium 11
 #fullscreen = true
 #icon_name = terminal
 #mouse_autohide = false

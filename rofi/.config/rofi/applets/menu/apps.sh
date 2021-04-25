@@ -69,25 +69,12 @@ case $chosen in
         ;;
 
     $browser)
-		if [[ -f /usr/bin/geany ]]; then
-			geany &
-		elif [[ -f /usr/bin/leafpad ]]; then
-			leafpad &
-		elif [[ -f /usr/bin/mousepad ]]; then
-			mousepad &
-		elif [[ -f /usr/bin/code ]]; then
-			code &
-		else
-			msg "No suitable text editor found!"
-		fi
-        ;;
-    $browser)
 		if [[ -f /usr/bin/brave ]]; then
 			brave &
 		elif [[ -f /usr/bin/firefox ]]; then
 			firefox &
 		elif [[ -f /usr/bin/chromium ]]; then
-			chromium &
+			$HOME/.local/scripts/chromium.sh
 		elif [[ -f /usr/bin/midori ]]; then
 			midori &
 		else

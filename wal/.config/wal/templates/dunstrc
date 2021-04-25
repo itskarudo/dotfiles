@@ -65,7 +65,7 @@
     frame_width = 2
 
     # Defines color of the frame around the notification window.
-    frame_color = {color7}
+    frame_color = {foreground}
 
     # Define a color for the separator.
     # possible values are:
@@ -85,7 +85,7 @@
 
     ### Text ###
 
-    font = Terminus 10
+    font = FantasqueSansMono Nerd Font 10
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
@@ -232,7 +232,6 @@
     # On the US keyboard layout "grave" is normally above TAB and left
     # of "1". Make sure this key actually exists on your keyboard layout,
     # e.g. check output of 'xmodmap -pke'
-    history = ctrl+grave
 
     # Context menu.
     context = ctrl+shift+period

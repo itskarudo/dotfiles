@@ -17,10 +17,12 @@ alias v="nvim"
 alias pac="sudo pacman"
 alias dla="youtube-dl -x --audio-format mp3 --audio-quality 0 --add-metadata"
 alias gic="git clone"
+alias nf="neofetch"
+alias bat="bat --theme=base16-256"
 
-export PS1=" \[\033[1;36m\]\w >\[\033[1;34m\]>\[\033[0m\] "
+export PS1=" \[\e[00;34m\]λ \W \[\e[0m\]"
 export DATA="/run/media/karudo/data"
 export PATH="$HOME/.local/bin/:$HOME/go/bin/:$PATH"
 
+(cat $HOME/.cache/wal/sequences &)
 
-colorscript random

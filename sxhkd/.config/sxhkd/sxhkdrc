@@ -14,16 +14,12 @@ super + space
 super + Escape
 	pkill -USR1 -x sxhkd
 
-# Lock screen
-alt + shift + x
-	/home/karudo/.local/scripts/lock.sh
-
 # Favorites
 super + d
 	/home/karudo/.local/bin/menu_apps &
 
 # locker
-super + shift + l
+super + shift + x
 	/home/karudo/.local/bin/applet_powermenu &
 
 # emoji selector

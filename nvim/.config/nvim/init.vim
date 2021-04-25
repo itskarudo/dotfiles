@@ -2,7 +2,6 @@ syntax on
 set number relativenumber                                                                                       
 filetype plugin on
 set nu rnu
-set cursorline
 
 set tabstop=2
 set shiftwidth=2
@@ -12,45 +11,36 @@ imap jk <Esc>
 tnoremap jk <C-\><C-n>
 
 
-" cursor thingy
-highlight Cursor guifg=white guibg=black
-highlight iCursor guifg=white guibg=steelblue
-set guicursor+=i:blinkwait10
-set guicursor+=i:blinkon1
-
-
 " vim plug shit
 call plug#begin('~/.config/nvim/plugged')
+Plug 'morhetz/gruvbox'
 Plug 'sheerun/vim-polyglot'
+Plug 'airblade/vim-gitgutter'
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " Autocompletion crap
 Plug 'jiangmiao/auto-pairs' " Pairing shit
 Plug 'preservim/nerdtree' " Nerd Tree POG
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'
 Plug 'christoomey/vim-tmux-navigator' " TMux integration
 Plug 'preservim/nerdcommenter'
 Plug 'rhysd/vim-clang-format'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'mattn/emmet-vim'
-Plug 'chriskempson/base16-vim'
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'chriskempson/base16-vim'
+Plug 'dylanaraps/wal.vim'
 call plug#end()
 
 let g:go_def_mapping_enabled = 0
 
-let g:NERDCustomDelimiters = { 'typescript.tsx': { 'left': '//', 'leftAlt': '/*', 'rightAlt': '*/' } }
-
 
 " theme config
-"
+colorscheme wal
+let g:airline_theme='wal'
 
-
-colorscheme base16-ashes
-let g:airline_theme='base16'
-
+let base16colorspace=256
 
 let g:limelight_conceal_ctermfg = 'gray'
 let g:limelight_conceal_ctermfg = 240
@@ -61,8 +51,8 @@ autocmd! User GoyoLeave Limelight!
 "COC config
 let g:coc_global_extensions = [
   \ 'coc-prettier',
-  \ 'coc-python',
   \ 'coc-tsserver',
+  \ 'coc-pyright',
   \ 'coc-eslint',
   \ 'coc-clangd'
   \]

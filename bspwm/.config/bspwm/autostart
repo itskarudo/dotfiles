@@ -1,11 +1,6 @@
 #!/bin/sh
+pgrep -x sxhkd > dev/null || sxhkd &
+pgrep -x lxsession > dev/null || lxsession &
 wal -o ~/.config/wal/done.sh -i $HOME/Pictures/Wallpapers &
-pgrep conky || ~/.config/conky/start-conky.sh &
+pgrep -x picom > dev/null || picom &
 xrdb ~/.Xresources
-
-mpd-mpris &
-pgrep bspswallow || ~/.local/scripts/bspswallow &
-
-~/.local/scripts/lock.py &
-
-xfce4-power-manager &
