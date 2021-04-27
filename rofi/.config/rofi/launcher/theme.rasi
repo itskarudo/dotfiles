@@ -1,0 +1,171 @@
+configuration {
+    lines:							5;
+    columns:						3;
+    font: 							"Iosevka Nerd Font 12";
+    bw: 							0;
+    location: 						0;
+    padding: 						0;
+    fixed-num-lines: 				true;
+    show-icons: 					false;
+    sidebar-mode: 					true;
+    separator-style: 				"none";
+    hide-scrollbar: 				true;
+    fullscreen: 					true;
+    fake-transparency: 				false;
+    scroll-method: 					0;
+    window-format: 					"[{w}] ··· {c} ···   {t}";
+    click-to-exit: 					true;
+    show-match: 					false;
+    combi-hide-mode-prefix: 		false;
+    display-window: 				"";
+    display-windowcd: 				"";
+    display-run: 					"";
+    display-ssh: 					"";
+    display-drun: 					"";
+    display-combi: 					"";
+}
+
+
+* {
+    background-color:             	@background;
+}
+
+window {
+    border: 						0px;
+    border-color: 					@color6;
+    border-radius: 					0px;
+    padding: 						150px;
+    width: 							100%;
+}
+
+prompt {
+    spacing: 						0;
+    border: 						0;
+    text-color: 					@foreground;
+}
+
+textbox-prompt-colon {
+    expand: 						false;
+    str: 							" ";
+    margin:							0px 4px 0px 0px;
+    text-color: 					inherit;
+}
+
+entry {
+    spacing:    					0;
+    text-color: 					@foreground;
+}
+
+case-indicator {
+    spacing:    					0;
+    text-color: 					@foreground;
+}
+
+inputbar {
+    spacing:    					0px;
+    text-color: 					@foreground;
+    padding:    					1px;
+    children: 						[ prompt,textbox-prompt-colon,entry,case-indicator ];
+}
+
+mainbox {
+    border: 						0px;
+    border-color: 					@color6;
+    padding: 						6;
+}
+
+listview {
+    fixed-height: 					0;
+    border: 						0px;
+    border-color: 					@color6;
+    spacing: 						5px;
+    scrollbar: 						false;
+    padding: 						25px 5px -20px 5px;
+}
+
+element {
+    border: 						4px;
+    border-radius: 					4px;
+    padding: 						15px;
+}
+element normal.normal {
+    background-color: 				@background;
+    text-color:       				@foreground;
+}
+element normal.urgent {
+    background-color: 				@background;
+    text-color:       				@color1;
+}
+element normal.active {
+    background-color: 				@background;
+    text-color:       				@foreground;
+    border-color: 					@color2;
+}
+element selected.normal {
+    background-color: 				@background;
+    text-color:       				@foreground;
+    border-color: 					@foreground;
+}
+element selected.urgent {
+    background-color: 				@background;
+    text-color:       				@color1;
+}
+element selected.active {
+    background-color: 				@background;
+    text-color:       				@foreground;
+    border-color: 					@foreground;
+}
+element alternate.normal {
+    background-color: 				@background;
+    text-color:       				@foreground;
+}
+element alternate.urgent {
+    background-color: 				@background;
+    text-color:       				@foreground;
+}
+element alternate.active {
+    background-color: 				@background;
+    text-color:       				@foreground;
+}
+
+sidebar {
+    border:       					0px;
+    border-color: 					@color6;
+    border-radius: 					0px;
+}
+
+button {
+    background-color:             	@se;
+    margin: 						5px;
+    padding: 						15px;
+    text-color: 					@foreground;
+    border: 						0px;
+    border-radius: 					4px;
+    border-color: 					@foreground;
+}
+
+button selected {
+    background-color:             	@background;
+    text-color: 					@foreground;
+    border: 						4px;
+    border-radius: 					4px;
+    border-color: 					@foreground;
+}
+
+scrollbar {
+    width:        					4px;
+    border:       					0px;
+    handle-color: 					@foreground;
+    handle-width: 					8px;
+    padding:      					0;
+}
+
+message {
+    border: 						0px;
+    border-color: 					@color6;
+    padding: 						1px;
+}
+
+textbox {
+    text-color: 					@foreground;
+}
