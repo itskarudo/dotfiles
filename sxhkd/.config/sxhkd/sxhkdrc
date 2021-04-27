@@ -4,11 +4,11 @@
 
 # terminal emulator
 super + Return
-	termite
+	st
 
 # program launcher
 super + space
-	/home/karudo/.config/rofi/bin/launcher_text &
+	/home/karudo/.config/rofi/launcher/launch.sh &
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -16,11 +16,11 @@ super + Escape
 
 # Favorites
 super + d
-	/home/karudo/.local/bin/menu_apps &
+	/home/karudo/.config/rofi/applets/apps.sh &
 
 # locker
 super + shift + x
-	/home/karudo/.local/bin/applet_powermenu &
+	/home/karudo/.config/rofi/applets/powermenu.sh &
 
 # emoji selector
 super + e

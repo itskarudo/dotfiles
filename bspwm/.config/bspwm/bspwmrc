@@ -15,7 +15,8 @@ _bc bottom_padding              35
 _bc left_padding                0
 _bc right_padding               0
 _bc click_to_focus              true
-_bc split_ratio                 0.6
+_bc split_ratio                 0.57
+_bc gapless_monocle             true
 _bc borderless_monocle          true
 _bc single_monocle              true
 _bc pointer_modifier            mod4
