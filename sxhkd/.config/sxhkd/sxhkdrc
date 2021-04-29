@@ -32,11 +32,11 @@ super + e
 
 #Volume Control
 XF86AudioLowerVolume
-	amixer -D pulse sset Master 5%-
+	/home/karudo/.local/scripts/volume.sh down
 XF86AudioRaiseVolume
-	amixer -D pulse sset Master 5%+
+	/home/karudo/.local/scripts/volume.sh up
 XF86AudioMute
-	amixer -D pulse set Master 1+ toggle
+	/home/karudo/.local/scripts/volume.sh mute
 
 XF86AudioPlay
 	playerctl play-pause

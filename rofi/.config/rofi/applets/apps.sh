@@ -9,7 +9,7 @@ files=""
 editor=""
 browser=""
 music=""
-settings=""
+#settings=""
 
 # Error msg
 msg() {
@@ -17,7 +17,7 @@ msg() {
 }
 
 # Variable passed to rofi
-options="$terminal\n$files\n$editor\n$browser\n$music\n$settings"
+options="$browser\n$files\n$terminal\n$editor\n$music"
 
 chosen="$(echo -e "$options" | $rofi_command -p "Most Used" -dmenu -selected-row 0)"
 case $chosen in
@@ -26,8 +26,8 @@ case $chosen in
 			termite &
 		elif [[ -f /usr/bin/urxvt ]]; then
 			urxvt &
-		elif [[ -f /usr/bin/kitty ]]; then
-			kitty &
+		elif [[ -f /usr/local/bin/st ]]; then
+			st &
 		elif [[ -f /usr/bin/xterm ]]; then
 			xterm &
 		elif [[ -f /usr/bin/xfce4-terminal ]]; then
@@ -64,7 +64,7 @@ case $chosen in
 		if [[ -f /usr/bin/firefox ]]; then
 			firefox &
 		elif [[ -f /usr/bin/chromium ]]; then
-			chromium &
+			~/.local/scripts/chromium.sh &
 		elif [[ -f /usr/bin/midori ]]; then
 			midori &
 		else
@@ -72,17 +72,17 @@ case $chosen in
 		fi
         ;;
     $music)
-		if [[ -f /usr/bin/lxmusic ]]; then
-			lxmusic &
+		if [[ -f /usr/bin/spotify ]]; then
+			spotify &
 		else
 			msg "No suitable music player found!"
 		fi
         ;;
-    $settings)
-		if [[ -f /usr/bin/xfce4-settings-manager ]]; then
-			xfce4-settings-manager &
-		else
-			msg "No suitable settings manager found!"
-		fi
-        ;;
+    #$settings)
+		#if [[ -f /usr/bin/xfce4-settings-manager ]]; then
+			#xfce4-settings-manager &
+		#else
+			#msg "No suitable settings manager found!"
+		#fi
+        #;;
 esac
